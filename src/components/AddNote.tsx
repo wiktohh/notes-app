@@ -34,13 +34,17 @@ const AddNote = ({ handleAddNote }: AddNoteInterface) => {
     <div
       className={`rounded-xl min-h-[200px] min-w-[240px] ${noteStyle} flex flex-col justify-between `}
     >
+      <form onSubmit={handleClick}>
       <div className="flex flex-col">
+    
+    
         <input
           className={`bg-transparent p-[10px] font-bold outline-none ${inputStyle}`}
           placeholder="Wpisz tytul..."
           type="text"
           id="title"
           onChange={handleSetTitle}
+
           value={title}
         />
         <textarea
@@ -53,10 +57,11 @@ const AddNote = ({ handleAddNote }: AddNoteInterface) => {
       </div>
       <div className="p-[10px] flex justify-between">
         <span>Pozostało {120 - text.length} znakow</span>
-        <span className="text-[20px] cursor-pointer" onClick={handleClick}>
+        <button type="submit" className="text-[20px] cursor-pointer">
           <IoSend />
-        </span>
+        </button>
       </div>
+      </form>
     </div>
   );
 };
