@@ -14,13 +14,13 @@ const Note = ({ title, text, date, handleRemoveNote, id }: NoteInterface) => {
 
   return (
     <div
-      className={`rounded-xl min-h-[220px] min-w-[230px] flex flex-col justify-between ${noteStyle}`}
+      className={`rounded-xl h-[220px] w-[230px] flex flex-col justify-between ${noteStyle}`}
     >
-      <div className="flex flex-col">
-        <span className=" p-[10px] font-bold truncate">{title}</span>
-        <span className="p-[10px] break-words">{text}</span>
+      <div className="flex flex-col h-[80%]">
+        <span className=" p-[10px] font-bold truncate	whitespace-pre-wrap">{title}</span>
+        <span className="p-[10px] break-words whitespace-pre-wrap overflow-auto">{text}</span>
       </div>
-      <div className="p-[10px] flex justify-between">
+      <div className="p-[10px] flex justify-between h-[20%]">
         <span>{date}</span>
         <span onClick={handleClick} className="text-[20px] cursor-pointer">
           <BsFillTrashFill />
